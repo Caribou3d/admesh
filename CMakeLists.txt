@@ -53,8 +53,6 @@ target_compile_definitions(libadmesh PUBLIC -DVERSION="${VERSION}")
 
 enable_testing()
 
-
-#foreach(testfile "block" "conveyor" "hourglass")
 foreach(testfile "block" "conveyor" "hourglass")
   MESSAGE("Test ${testfile}")
 
