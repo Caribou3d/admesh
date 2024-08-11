@@ -11,9 +11,6 @@ No further development will be done, but bugs will be resolved, if possible.
 Don't patch this project downstream but use this code, so all can benefit from
 the changes. Pull requests are welcome, but be sure to generate no warnings.
 
-Grab the 0.98.5 tarball:
-https://github.com/admesh/admesh/releases/download/v0.98.5/admesh-0.98.5.tar.gz
-
 About ADMesh:
 -------------
 
@@ -22,9 +19,7 @@ ADMesh only reads the STL file format that is used for rapid prototyping
 applications, although it can write STL, VRML, OFF, and DXF files.
 
 Additional information regarding the underlying algorithms of ADMesh
-can be found in Anthony Martin's Masters Thesis available from here:
-
-http://www.varlog.com/admesh-htm/ADMeshThesis.zip
+can be found in Anthony Martin's Master Thesis available in the doc directory.
 
 Features:
 ---------
