@@ -1,9 +1,7 @@
 name: Admesh CI
 
 on:
-  push:
-  pull_request:
-    branches: [ master ]
+  workflow_dispatch:
 
 jobs:
   build:
@@ -65,7 +63,7 @@ jobs:
             build_type: Release
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
 
     - name: install cross compile tools
       if: contains(matrix.name, 'windows')
@@ -104,7 +102,7 @@ jobs:
 
     - name: upload windows
       if: contains(matrix.name, 'windows')
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: admesh-${{ steps.vars.outputs.sha_short }}
         path: |
