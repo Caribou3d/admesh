@@ -142,8 +142,13 @@ foreach(testfile "block" "conveyor" "hourglass")
   add_test(${testfile}-normal-directions-compare ${CMAKE_COMMAND} -E compare_files ${CMAKE_SOURCE_DIR}/test/${testfile}/normal-directions-good.stl ${CMAKE_BINARY_DIR}/normal-directions.stl)
 
   # binary-stl test
-  #add_test(${testfile}-binary-stl ${CMAKE_BINARY_DIR}/admesh ${CMAKE_SOURCE_DIR}/examples/${testfile}.stl -b ${CMAKE_BINARY_DIR}/binary.stl )
-  #add_test(${testfile}-binary-stl-compare ${CMAKE_COMMAND} -E compare_files ${CMAKE_SOURCE_DIR}/test/${testfile}/binary.stl ${CMAKE_BINARY_DIR}/binary.stl)
+  add_test(${testfile}-binary-stl ${CMAKE_BINARY_DIR}/admesh ${CMAKE_SOURCE_DIR}/examples/${testfile}.stl -b ${CMAKE_BINARY_DIR}/binary.stl )
+
+  if(NOT WIN32)  
+    add_test(${testfile}-binary-stl-compare ${CMAKE_COMMAND} -E compare_files ${CMAKE_SOURCE_DIR}/test/${testfile}/binary.stl ${CMAKE_BINARY_DIR}/binary.stl)
+  else()
+    add_test(${testfile}-binary-stl-compare ${CMAKE_COMMAND} -E compare_files ${CMAKE_SOURCE_DIR}/test/${testfile}/binary-win.stl ${CMAKE_BINARY_DIR}/binary.stl)
+  endif()
 
   # off-stl test
   add_test(${testfile}-off-stl ${CMAKE_BINARY_DIR}/admesh ${CMAKE_SOURCE_DIR}/examples/${testfile}.stl --write-off ${CMAKE_BINARY_DIR}/basic.off )
