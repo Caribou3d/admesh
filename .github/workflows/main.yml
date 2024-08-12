@@ -102,7 +102,7 @@ jobs:
 
     - name: upload windows
       if: contains(matrix.name, 'windows')
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: admesh-${{ steps.vars.outputs.sha_short }}
         path: |
